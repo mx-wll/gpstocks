@@ -63,13 +63,18 @@
         >Calculate</v-btn
       >
     </v-form>
-    <p>{{ result }}</p>
+    <Results :result="result"></Results>
   </v-container>
 </template>
 
 <script>
+import Results from "./Results.vue";
+
 export default {
   name: "Calculator",
+  components: {
+    Results,
+  },
   props: [
     "price",
     "currentPrice",
