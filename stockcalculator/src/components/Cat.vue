@@ -10,7 +10,7 @@
     ></iframe>
     <p>
       <a href="https://giphy.com/gifs/originals-reaction-xT1XGIgjXUAysTkRyw"
-        >via GIPHY</a
+        >Loading the current stock price</a
       >
     </p>
   </div>
