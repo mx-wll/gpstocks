@@ -1,19 +1,5 @@
 <template>
-  <div class="wrapper">
-    <iframe
-      src="https://giphy.com/embed/xT1XGIgjXUAysTkRyw"
-      width="480"
-      height="480"
-      frameBorder="0"
-      class="giphy-embed"
-      allowFullScreen
-    ></iframe>
-    <p>
-      <a href="https://giphy.com/gifs/originals-reaction-xT1XGIgjXUAysTkRyw"
-        >Loading the current stock price</a
-      >
-    </p>
-  </div>
+  <p>Loading the current stock price</p>
 </template>
 
 <script>
