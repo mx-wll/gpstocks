@@ -7,8 +7,7 @@
             <v-col cols="12" md="12">
               <v-text-field
                 v-model="price"
-                :rules="numberRules"
-                label="Price"
+                label="Price (in yen)"
                 required
               ></v-text-field>
             </v-col>
@@ -19,7 +18,7 @@
                 color="primary"
                 elevation="3"
                 small
-                >currentPrice</v-btn
+                >Current</v-btn
               >
             </v-col>
             <v-col cols="12" md="4">
@@ -29,7 +28,7 @@
                 color="primary"
                 elevation="3"
                 small
-                >fiftyTwoWeekHigh</v-btn
+                >Highest</v-btn
               >
             </v-col>
             <v-col cols="12" md="4">
@@ -39,22 +38,20 @@
                 color="primary"
                 elevation="3"
                 small
-                >fiftyTwoWeekLow</v-btn
+                >Lowest</v-btn
               >
             </v-col>
             <v-col cols="12" md="12">
               <v-text-field
                 v-model="volume"
-                :rules="numberRules"
-                label="Volume"
+                label="How much do you have? (Stock Volume)"
                 required
               ></v-text-field>
             </v-col>
             <v-col cols="12" md="12">
               <v-text-field
                 v-model="taxrate"
-                :rules="numberRules"
-                label="Taxrate"
+                label="How much can you keep? (Taxrate in %)"
                 required
               ></v-text-field>
             </v-col>
@@ -71,21 +68,21 @@
         </v-form>
         <Results :result="result"></Results>
       </v-container>
-      <Cat v-else></Cat>
+      <Loader v-else></Loader>
     </v-main>
   </v-app>
 </template>
 
 <script>
 import axios from "axios";
-import Cat from "./components/Cat.vue";
+import Loader from "./components/Loader.vue";
 import Results from "./components/Results.vue";
 
 export default {
   name: "App",
   components: {
     Results,
-    Cat,
+    Loader,
   },
   data: () => ({
     price: "",
@@ -97,7 +94,6 @@ export default {
     volume: "",
     result: "",
     valid: false,
-    numberRules: [(v) => !!v || "Is required"],
   }),
   props: ["name", "img"],
   mounted() {
@@ -161,3 +157,10 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.container {
+  margin-top: 80px;
+  max-width: 375px;
+}
+</style>
